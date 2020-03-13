@@ -22,7 +22,7 @@ public class Skill : MonoBehaviour{
 
     public void use(GameObject t) {
 
-        List<GameObject> targets = range.getTarget(new Vector2);
+        List<GameObject> targets = range.getTarget(new Vector2());
 
 
 
