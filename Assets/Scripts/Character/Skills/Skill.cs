@@ -20,8 +20,11 @@ public class Skill : MonoBehaviour{
         
     }
 
-    public void use() {
-        List<GameObject> targets = range.getTargetsInRange(); // change vector2 to something else
+    public void use(GameObject t) {
+
+        List<GameObject> targets = range.getTarget(new Vector2);
+
+
 
         foreach (GameObject target in targets) {
             foreach (BaseAbilityEffect effect in effects) {
