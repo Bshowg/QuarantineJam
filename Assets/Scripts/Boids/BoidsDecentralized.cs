@@ -19,7 +19,8 @@ public class BoidsDecentralized : MonoBehaviour{
     }
 
     void Start(){
-        velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
+        //velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
+        velocity = new Vector2(0,0);
         Debug.Log("Boidz: " + boidz.Count);
     }
 
@@ -36,14 +37,23 @@ public class BoidsDecentralized : MonoBehaviour{
 
     private void boidRule() {
         Vector2 v1 = rule1();
-        v1 = ((Vector2)transform.position - v1) * pcWeight;
 
+        Debug.DrawLine(((Vector3)v1 - Vector3.right * .5f), ((Vector3)v1 + Vector3.right * .5f), Color.red);
+        Debug.DrawLine(((Vector3)v1 - Vector3.up * .5f), ((Vector3)v1 + Vector3.up * .5f), Color.red);
+
+        v1 = (v1 - (Vector2)transform.position) * (pcWeight);
         Debug.Log("V1: " + v1);
-        Vector2 v2 = rule2();
+        Debug.DrawLine(transform.position, (transform.position + Vector3.Normalize((Vector3)v1)) , Color.red);
+
+        Vector2 v2 = rule2() * 5*pcWeight;
         Debug.Log("V2: " + v2);
+
+        /*
         Vector2 v3 = rule3();
         v3 = (velocity - v3) * pvWeight;
         Debug.Log("V3: " + v3);
+        */
+        Vector2 v3 = Vector2.zero;
         velocity += (v1 + v2 + v3);
    
     }

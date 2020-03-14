@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.372808
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
@@ -266,6 +266,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314183108522416630, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_Name
@@ -298,8 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRadius: 10
   minimumAllowedDistance: 1
-  pcWeight: 0.1
-  pvWeight: 0.25
+  pcWeight: 0.02
+  pvWeight: 0.01
 --- !u!1001 &80493425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -315,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.182
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
@@ -362,6 +372,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314183108522416630, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_Name
@@ -394,8 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRadius: 10
   minimumAllowedDistance: 1
-  pcWeight: 0.1
-  pvWeight: 0.25
+  pcWeight: 0.02
+  pvWeight: 0.01
 --- !u!1001 &839105015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.54
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
@@ -458,6 +478,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314183108522416630, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_Name
@@ -480,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.57
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
@@ -532,6 +562,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800707304083356628, guid: 963e9b6362105a049a8562f8858996ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314183108522416630, guid: 963e9b6362105a049a8562f8858996ec,
         type: 3}
       propertyPath: m_Name
@@ -564,8 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRadius: 10
   minimumAllowedDistance: 1
-  pcWeight: 0.1
-  pvWeight: 0.25
+  pcWeight: 0.02
+  pvWeight: 0.01
 --- !u!1 &1800820093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5314183108522416630, guid: 963e9b6362105a049a8562f8858996ec,
@@ -586,5 +626,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRadius: 10
   minimumAllowedDistance: 1
-  pcWeight: 0.1
-  pvWeight: 0.25
+  pcWeight: 0.02
+  pvWeight: 0.01
