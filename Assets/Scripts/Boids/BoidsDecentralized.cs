@@ -19,9 +19,6 @@ public class BoidsDecentralized : MonoBehaviour{
     private float timeBetweenCalcs = .1f;
 
 
-    private bool phase = true;
-
-
     IEnumerator boidsCoroutine() {
         while (continueCalcBoids) {
             boidRule();
@@ -39,19 +36,12 @@ public class BoidsDecentralized : MonoBehaviour{
         velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
         Debug.Log("Boidz: " + boidz.Count);
         StartCoroutine(boidsCoroutine());
+
+        minimumAllowedDistance += Random.Range(0, minimumAllowedDistance * .5f);
+        sightRadius = sightRadius * Random.Range(.7f, 1.5f);
     }
 
-    void Update(){
-        //update weigths:
-        if (phase) {
-            pcWeight += .001f;
-        }
-        else {
-            pcWeight -= .001f;
-        }
-        if (pcWeight > .3f || pcWeight < -0.1f) { phase = !phase; }
-
-    }
+    void Update(){}
     private void LateUpdate(){
         transform.Translate((velocity * Time.deltaTime));
     }
