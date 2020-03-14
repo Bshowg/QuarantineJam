@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8713175746370660083}
   - component: {fileID: 8417159968753496734}
   - component: {fileID: 6926830717441844831}
+  - component: {fileID: -3347398112817330949}
   m_Layer: 8
   m_Name: CrowdMan
   m_TagString: Untagged
@@ -130,3 +131,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.63, y: 1.92}
   m_EdgeRadius: 0
+--- !u!114 &-3347398112817330949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275452340560968433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5a821b6a99d494dbfe1e4b7be12438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRadius: 0
+  minimumAllowedDistance: 0
+  pcWeight: 0
+  pvWeight: 0
