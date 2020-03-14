@@ -61,7 +61,6 @@ public class SpawnCrowd : MonoBehaviour
 
         do
         {
-            
             u = 2.0f * UnityEngine.Random.Range(-size.x/2,size.x/2) - 1.0f;
             v = 2.0f * UnityEngine.Random.Range(-size.y/2,size.y/2) - 1.0f;
             S = u * u + v * v;
