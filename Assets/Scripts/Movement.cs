@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
 
     void UpdateSpeed()
     {
-        int crowdLayer = LayerMask.NameToLayer("Crowd");
+        int crowdLayer = 1 << LayerMask.NameToLayer("Crowd");
         Collider2D[] people = Physics2D.OverlapCircleAll(transform.position, paranoiaRadius, crowdLayer);
         peopleAround = people.Length;
         //formula da rivedere

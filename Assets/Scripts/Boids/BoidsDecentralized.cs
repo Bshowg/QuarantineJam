@@ -44,16 +44,13 @@ public class BoidsDecentralized : MonoBehaviour{
         Debug.DrawLine(((Vector3)v1 - Vector3.up * .5f), ((Vector3)v1 + Vector3.up * .5f), Color.red);
 
         v1 = (v1 - (Vector2)transform.position) * (pcWeight);
-        Debug.Log("V1: " + v1);
         Debug.DrawLine(transform.position, (transform.position + Vector3.Normalize((Vector3)v1)) , Color.red);
 
         Vector2 v2 = rule2(); //* 5*pcWeight;
-        Debug.Log("V2: " + v2);
 
         
         Vector2 v3 = rule3();
         v3 = (velocity - v3) * pvWeight;
-        Debug.Log("V3: " + v3);
 
         velocity *= .7f;
         velocity += (v1 + v2 + v3);
