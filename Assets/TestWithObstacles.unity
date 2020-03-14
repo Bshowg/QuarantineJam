@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {x: -0.24, y: 2.6, z: 0}
   size: {x: 115, y: 56.39, z: 0}
-  initSpawn: 300
+  initSpawn: 200
   maxSpawn: 300
   timestepBase: 3
   personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,

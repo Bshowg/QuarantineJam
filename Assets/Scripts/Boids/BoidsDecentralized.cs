@@ -52,11 +52,11 @@ public class BoidsDecentralized : MonoBehaviour{
     private void boidRule() {
         Vector2 v1 = rule1();
 
-        Debug.DrawLine(((Vector3)v1 - Vector3.right * .5f), ((Vector3)v1 + Vector3.right * .5f), Color.red);
-        Debug.DrawLine(((Vector3)v1 - Vector3.up * .5f), ((Vector3)v1 + Vector3.up * .5f), Color.red);
+        //Debug.DrawLine(((Vector3)v1 - Vector3.right * .5f), ((Vector3)v1 + Vector3.right * .5f), Color.red);
+        //Debug.DrawLine(((Vector3)v1 - Vector3.up * .5f), ((Vector3)v1 + Vector3.up * .5f), Color.red);
 
         v1 = (v1 - (Vector2)transform.position) * (pcWeight);
-        Debug.DrawLine(transform.position, (transform.position + Vector3.Normalize((Vector3)v1)) , Color.red);
+        //Debug.DrawLine(transform.position, (transform.position + Vector3.Normalize((Vector3)v1)) , Color.red);
 
         Vector2 v2 = rule2(); //* 5*pcWeight;
 
