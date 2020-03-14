@@ -9,14 +9,20 @@ public class SpawnCrowd : MonoBehaviour
     public Vector3 size;
     Camera camera;
 
-    public float timestep = 3f;
+    public int initSpawn=100;
+    public int maxSpawn = 300;
+    public float timestepBase = 3f;
+    public float timestep = 0f;
+
 
     public GameObject personPrefab;
+
+    private List<Transform> crowd = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < initSpawn; i++)
         {
             SpawnPerson();
         }
@@ -26,17 +32,24 @@ public class SpawnCrowd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timestep += Time.deltaTime;
+        if (timestep >= timestepBase && crowd.Count<maxSpawn)
+        {
+            timestep = 0;
+            SpawnPerson();
+
+        }
     }
 
     void SpawnPerson()
     {
-        Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2), UnityEngine.Random.Range(-size.y / 2, size.y / 2), -1f);
+        Vector3 pos = randomPosition();
         //Vector3 pos = center + new Vector3(NextGaussianDouble(), NextGaussianDouble(), -1f);
         if (checkNotVisible(pos))
         {
             var p = Instantiate(personPrefab);
             p.transform.position = pos;
+            crowd.Add(p.transform);
         }
         
         
@@ -71,5 +84,10 @@ public class SpawnCrowd : MonoBehaviour
         Debug.Log(S);
         float fac =(float) Math.Sqrt(-2.0f * Math.Log(S) / S);
         return u * fac;
+    }
+
+    private Vector3 randomPosition()
+    {
+        return center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2), UnityEngine.Random.Range(-size.y / 2, size.y / 2), -1f);
     }
 }
