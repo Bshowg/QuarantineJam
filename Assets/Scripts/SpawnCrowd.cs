@@ -9,6 +9,8 @@ public class SpawnCrowd : MonoBehaviour
     public Vector3 size;
     Camera camera;
 
+    public float timestep = 3f;
+
     public GameObject personPrefab;
     // Start is called before the first frame update
     void Start()
@@ -61,7 +63,6 @@ public class SpawnCrowd : MonoBehaviour
 
         do
         {
-            
             u = 2.0f * UnityEngine.Random.Range(-size.x/2,size.x/2) - 1.0f;
             v = 2.0f * UnityEngine.Random.Range(-size.y/2,size.y/2) - 1.0f;
             S = u * u + v * v;
