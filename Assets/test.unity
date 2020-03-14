@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fcb9c344596a34c82513c6bf021223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampTime: 0.15
-  target: {fileID: 0}
+  dampTime: 0.5
+  target: {fileID: 1161270861}
 --- !u!1 &1083056179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2826344317765276149, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
@@ -548,6 +548,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.63, y: 1.92}
   m_EdgeRadius: 0
+--- !u!4 &1161270861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6811214313031479387, guid: e555ff252283da646a3b28e6f7af93f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1421906779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1330263715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,6 +844,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {x: -0.24, y: 0.83, z: 0}
   size: {x: 51.32, y: 28, z: 0}
+  initSpawn: 100
+  maxSpawn: 300
+  timestepBase: 3
   timestep: 3
   personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
     type: 3}
