@@ -54,7 +54,8 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            ////TODO
+            AnimatorStateInfo animInfo = anim.GetCurrentAnimatorStateInfo(LayerMask.NameToLayer("Player"));
+            //RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection);
         }
     }
 }
