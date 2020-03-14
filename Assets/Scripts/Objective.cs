@@ -16,6 +16,11 @@ public class Objective : MonoBehaviour
 
     public void Interaction()
     {
-        Debug.Log("INTERACT");
+        GameManager gm = FindObjectOfType<GameManager>();
+        gm.CompleteObjective();
+        if (gm.isEnding())
+        {
+            //TODO
+        }
     }
 }
