@@ -10,8 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 800707304083356628}
   - component: {fileID: 5427327823864143571}
+<<<<<<< HEAD
   - component: {fileID: 1772579510561636340}
   m_Layer: 8
+=======
+  - component: {fileID: -7227947243485557747}
+  - component: {fileID: 6644585350962118505}
+  - component: {fileID: 5291987081797545324}
+  m_Layer: 0
+>>>>>>> 1920f51a76575079e3e888ac5a8f7b06bca66a92
   m_Name: CrowdMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +89,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!61 &1772579510561636340
+=======
+--- !u!114 &-7227947243485557747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314183108522416630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5a821b6a99d494dbfe1e4b7be12438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRadius: 0
+  minimumAllowedDistance: 0
+  pcWeight: 0
+  pvWeight: 0
+--- !u!50 &6644585350962118505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314183108522416630}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &5291987081797545324
+>>>>>>> 1920f51a76575079e3e888ac5a8f7b06bca66a92
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,19 +140,31 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 1
+=======
+  m_IsTrigger: 0
+>>>>>>> 1920f51a76575079e3e888ac5a8f7b06bca66a92
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
     oldSize: {x: 1, y: 1}
+=======
+    oldSize: {x: 2.63, y: 1.92}
+>>>>>>> 1920f51a76575079e3e888ac5a8f7b06bca66a92
     newSize: {x: 2.63, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1, y: 1}
+=======
+  m_Size: {x: 2.63, y: 1.92}
+>>>>>>> 1920f51a76575079e3e888ac5a8f7b06bca66a92
   m_EdgeRadius: 0

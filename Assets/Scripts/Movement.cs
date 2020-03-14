@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 1.0f;
     [SerializeField] private float currentSpeed = 1.0f;
+    [SerializeField] private int peopleAround = 0;
     [SerializeField] private float reduceBy = 0.1f;
     [SerializeField] private float minSpeed = 0.2f;
     [SerializeField] private float paranoiaRadius = 5f;
@@ -41,9 +42,9 @@ public class Movement : MonoBehaviour
 
     void UpdateSpeed()
     {
-        LayerMask.NameToLayer("Crowd");
-        Collider2D[] people = Physics2D.OverlapCircleAll(transform.position, paranoiaRadius);
-        Debug.Log(people.Length);
+        int crowdLayer = LayerMask.NameToLayer("Crowd");
+        Collider2D[] people = Physics2D.OverlapCircleAll(transform.position, paranoiaRadius, crowdLayer);
+        peopleAround = people.Length;
         //formula da rivedere
         float updatedSpeed = baseSpeed - reduceBy * people.Length;
         currentSpeed = Mathf.Max(minSpeed, updatedSpeed);
