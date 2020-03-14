@@ -118,12 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be64481a0914dfb499cba39b8995f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 3
+  baseSpeed: 4
   currentSpeed: 1
   peopleAround: 0
-  reduceBy: 0.1
-  minSpeed: 0.2
-  paranoiaRadius: 5
+  reduceBy: 0.4
+  minSpeed: 0.5
+  paranoiaRadius: 3
+  interactionDistance: 1
 --- !u!95 &-5759797737364876923
 Animator:
   serializedVersion: 3
