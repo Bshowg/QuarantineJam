@@ -11,6 +11,8 @@ public class BoidsDecentralized : MonoBehaviour{
     public float pcWeight;
     public float pvWeight;
 
+    public float speed;
+
     public Vector2 velocity { get; private set; }
 
     private void Awake(){
@@ -48,13 +50,13 @@ public class BoidsDecentralized : MonoBehaviour{
         Vector2 v2 = rule2() * 5*pcWeight;
         Debug.Log("V2: " + v2);
 
-        /*
+        
         Vector2 v3 = rule3();
         v3 = (velocity - v3) * pvWeight;
         Debug.Log("V3: " + v3);
-        */
-        Vector2 v3 = Vector2.zero;
+        
         velocity += (v1 + v2 + v3);
+        velocity = velocity.normalized * speed;
    
     }
 

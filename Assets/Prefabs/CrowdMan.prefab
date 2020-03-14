@@ -147,3 +147,4 @@ MonoBehaviour:
   minimumAllowedDistance: 2
   pcWeight: 0.02
   pvWeight: 0.1
+  speed: 1
