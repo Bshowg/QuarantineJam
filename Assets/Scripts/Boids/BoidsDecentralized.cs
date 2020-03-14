@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoidsDecentralized : MonoBehaviour{
     private static List<BoidsDecentralized> boidz = null;
+    private static SpawnCrowd spawner = null;
     private static GameObject player = null;
     private static float maxRadiusAroundPlayer = -1;
     private static float minRadiusAroundPlayer = -1;
@@ -31,10 +32,11 @@ public class BoidsDecentralized : MonoBehaviour{
 
 
     private void Awake(){
-        if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 2.5f;
+        if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 1.5f;
         if (maxRadiusAroundPlayer < 0) maxRadiusAroundPlayer = minRadiusAroundPlayer * 2.5f;
         if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         if (boidz == null) boidz = new List<BoidsDecentralized>();
+        if (spawner == null) spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnCrowd>();
         boidz.Add(this);
     }
 
@@ -62,13 +64,19 @@ public class BoidsDecentralized : MonoBehaviour{
         if (distance > 3 * minRadiusAroundPlayer) {
             Debug.Log("invoked");
 
+            Vector2 newpos = genPoint();
 
-            float radius = Random.Range(minRadiusAroundPlayer, maxRadiusAroundPlayer);
-            float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
-            Vector2 newpos = new Vector2(radius * Mathf.Cos(angle), radius * Mathf.Sin(angle));
+            while (!spawner.insideBounds(newpos)) { newpos = genPoint(); }
             transform.position = newpos;
+            
 
         }
+    }
+
+    private Vector2 genPoint(){
+        float radius = Random.Range(minRadiusAroundPlayer, maxRadiusAroundPlayer);
+        float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+        return new Vector2(radius * Mathf.Cos(angle), radius * Mathf.Sin(angle));;
     }
 
     private void boidRule() {
