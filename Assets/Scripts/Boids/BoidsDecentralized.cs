@@ -16,7 +16,7 @@ public class BoidsDecentralized : MonoBehaviour{
     public Vector2 velocity { get; private set; }
 
     private bool continueCalcBoids = true;
-    private float timeBetweenCalcs = 1f;
+    private float timeBetweenCalcs = .1f;
 
 
     IEnumerator boidsCoroutine() {
