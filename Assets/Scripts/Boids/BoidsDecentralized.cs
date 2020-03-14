@@ -32,7 +32,7 @@ public class BoidsDecentralized : MonoBehaviour{
 
 
     private void Awake(){
-        if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 1.5f;
+        if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 2.5f;
         if (maxRadiusAroundPlayer < 0) maxRadiusAroundPlayer = minRadiusAroundPlayer * 2.5f;
         if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         if (boidz == null) boidz = new List<BoidsDecentralized>();
