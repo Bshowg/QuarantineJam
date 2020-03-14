@@ -4,35 +4,58 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    private float speed = 1.0f;
-    private bool moveRight=false;
-    private bool moveLeft=false;
-    private Rigidbody2D rigidbody2D;
-    // Start is called before the first frame update
+    [SerializeField] private float baseSpeed = 1.0f;
+    [SerializeField] private float currentSpeed = 1.0f;
+    [SerializeField] private int peopleAround = 0;
+    [SerializeField] private float reduceBy = 0.1f;
+    [SerializeField] private float minSpeed = 0.2f;
+    [SerializeField] private float paranoiaRadius = 5f;
+
+    private Rigidbody2D rb;
+    private Animator anim;
+    private Vector2 movement;
+
     void Start()
     {
-        rigidbody2D = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
+        anim = this.GetComponent<Animator>();
+        movement = new Vector2(0, 0);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A))
-            transform.position -= Vector3.right * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.D) || (moveRight && !moveLeft))
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.W))
-            transform.position += Vector3.up * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.S) || (moveRight && !moveLeft))
-            transform.position -= Vector3.up * speed * Time.deltaTime;
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            ////TODO
-        }
+        UpdateSpeed();
+        Move();
+        Interact();
     }
 
-   
+    void Move()
+    {
+        movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical");
+        if (movement.magnitude > 1.0f) movement.Normalize();
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude);
+        rb.MovePosition(rb.position + movement * currentSpeed * Time.deltaTime);
+    }
+
+    void UpdateSpeed()
+    {
+        int crowdLayer = LayerMask.NameToLayer("Crowd");
+        Collider2D[] people = Physics2D.OverlapCircleAll(transform.position, paranoiaRadius, crowdLayer);
+        peopleAround = people.Length;
+        //formula da rivedere
+        float updatedSpeed = baseSpeed - reduceBy * people.Length;
+        currentSpeed = Mathf.Max(minSpeed, updatedSpeed);
+    }
+
+    void Interact()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            AnimatorStateInfo animInfo = anim.GetCurrentAnimatorStateInfo(LayerMask.NameToLayer("Player"));
+            //RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection);
+        }
+    }
 }
