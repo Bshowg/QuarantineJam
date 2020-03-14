@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightRadius: 10
-  minimumAllowedDistance: 2
+  minimumAllowedDistance: 1.5
   pcWeight: 0.02
   pvWeight: 0.1
-  speed: 1
+  speed: 2
