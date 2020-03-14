@@ -14,11 +14,11 @@ public class SpawnCrowd : MonoBehaviour
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        /*for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             SpawnPerson();
-        }*/
-        SpawnPerson();
+        }
+        //SpawnPerson();
     }
 
     // Update is called once per frame
@@ -29,8 +29,8 @@ public class SpawnCrowd : MonoBehaviour
 
     void SpawnPerson()
     {
-        //Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2), UnityEngine.Random.Range(-size.y / 2, size.y / 2), -1f);
-        Vector3 pos = center + new Vector3(NextGaussianDouble(), NextGaussianDouble(), -1f);
+        Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2), UnityEngine.Random.Range(-size.y / 2, size.y / 2), -1f);
+        //Vector3 pos = center + new Vector3(NextGaussianDouble(), NextGaussianDouble(), -1f);
         if (checkNotVisible(pos))
         {
             var p = Instantiate(personPrefab);
@@ -55,7 +55,7 @@ public class SpawnCrowd : MonoBehaviour
         Gizmos.DrawCube(center, size);
     }
 
-    public float NextGaussianDouble()
+    public float NextGaussian()
     {
         float u, v, S;
 
