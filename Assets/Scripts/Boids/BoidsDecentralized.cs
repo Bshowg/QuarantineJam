@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BoidsDecentralized : MonoBehaviour{
     private static List<BoidsDecentralized> boidz = null;
+    private static GameObject player = null;
+    private static float maxRadiusAroundPlayer = -1;
+    private static float minRadiusAroundPlayer = -1;
 
     public float sightRadius;
     public float minimumAllowedDistance;
@@ -28,6 +31,9 @@ public class BoidsDecentralized : MonoBehaviour{
 
 
     private void Awake(){
+        if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 2.5f;
+        if (maxRadiusAroundPlayer < 0) maxRadiusAroundPlayer = minRadiusAroundPlayer * 2.5f;
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         if (boidz == null) boidz = new List<BoidsDecentralized>();
         boidz.Add(this);
     }
@@ -41,25 +47,36 @@ public class BoidsDecentralized : MonoBehaviour{
         sightRadius = sightRadius * Random.Range(.7f, 1.5f);
     }
 
-    void Update(){}
+
+    
     private void LateUpdate(){
+        rearrangeAroundPlayer();
+
         transform.Translate((velocity * Time.deltaTime));
     }
 
 
+    private void rearrangeAroundPlayer() {
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        Debug.Log("MinDist is: " + minRadiusAroundPlayer);
+        if (distance > 3 * minRadiusAroundPlayer) {
+            Debug.Log("invoked");
 
+
+            float radius = Random.Range(minRadiusAroundPlayer, maxRadiusAroundPlayer);
+            float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+            Vector2 newpos = new Vector2(radius * Mathf.Cos(angle), radius * Mathf.Sin(angle));
+            transform.position = newpos;
+
+        }
+    }
 
     private void boidRule() {
         Vector2 v1 = rule1();
 
-        //Debug.DrawLine(((Vector3)v1 - Vector3.right * .5f), ((Vector3)v1 + Vector3.right * .5f), Color.red);
-        //Debug.DrawLine(((Vector3)v1 - Vector3.up * .5f), ((Vector3)v1 + Vector3.up * .5f), Color.red);
-
         v1 = (v1 - (Vector2)transform.position) * (pcWeight);
-        //Debug.DrawLine(transform.position, (transform.position + Vector3.Normalize((Vector3)v1)) , Color.red);
 
-        Vector2 v2 = rule2(); //* 5*pcWeight;
-
+        Vector2 v2 = rule2(); 
         
         Vector2 v3 = rule3();
         v3 = (velocity - v3) * pvWeight;
