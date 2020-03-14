@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800707304083356628}
   - component: {fileID: 5427327823864143571}
+  - component: {fileID: -7227947243485557747}
   m_Layer: 0
   m_Name: CrowdMan
   m_TagString: Untagged
@@ -81,3 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7227947243485557747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314183108522416630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5a821b6a99d494dbfe1e4b7be12438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRadius: 0
+  minimumAllowedDistance: 0
+  pcWeight: 0
+  pvWeight: 0
