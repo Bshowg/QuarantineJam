@@ -285,6 +285,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 980504784191411159, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2826344317765276149, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
         type: 3}
       propertyPath: m_Name
@@ -379,6 +384,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 980504784191411159, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2826344317765276149, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
         type: 3}
       propertyPath: m_Name
@@ -472,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980504784191411159, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2826344317765276149, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
         type: 3}
@@ -896,7 +911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {x: -0.24, y: 0.83, z: 0}
   size: {x: 51.32, y: 28, z: 0}
-  personPrefab: {fileID: 0}
+  personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
+    type: 3}
 --- !u!4 &2050614937
 Transform:
   m_ObjectHideFlags: 0
@@ -932,6 +948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980504784191411159, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2826344317765276149, guid: b7ad0e4f0880ae54ca8f57e61b45c517,
         type: 3}
