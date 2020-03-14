@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float reduceBy = 0.1f;
     [SerializeField] private float minSpeed = 0.2f;
     [SerializeField] private float paranoiaRadius = 5f;
+    [SerializeField] private float interactionDistance = 1f;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -52,10 +53,13 @@ public class Movement : MonoBehaviour
 
     void Interact()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            AnimatorStateInfo animInfo = anim.GetCurrentAnimatorStateInfo(LayerMask.NameToLayer("Player"));
-            //RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection);
+            RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.up, interactionDistance);
+            if (hit[1].collider.GetComponent<Objective>() != null)
+            {
+                hit[1].collider.GetComponent<Objective>().Interaction();
+            }
         }
     }
 }

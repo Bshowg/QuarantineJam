@@ -14,8 +14,8 @@ public class Objective : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Interaction()
     {
-        Debug.Log("trigger");
+        Debug.Log("INTERACT");
     }
 }
