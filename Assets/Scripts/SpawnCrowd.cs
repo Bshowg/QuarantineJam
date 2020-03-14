@@ -19,10 +19,12 @@ public class SpawnCrowd : MonoBehaviour
 
     private static List<Transform> crowd = new List<Transform>();
     private float radius;
+    private Bounds bounds;
     // Start is called before the first frame update
     void Start()
     {
         Physics2D.IgnoreLayerCollision(0, 8, true);
+        bounds = new Bounds(center, size);
         radius = personPrefab.GetComponent<BoxCollider2D>().bounds.size.x;
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         for (int i = 0; i < initSpawn; i++)
@@ -80,7 +82,7 @@ public class SpawnCrowd : MonoBehaviour
         Gizmos.DrawCube(center, size);
     }
 
-    public float NextGaussian()
+    private float NextGaussian()
     {
         float u, v, S;
 
@@ -99,5 +101,13 @@ public class SpawnCrowd : MonoBehaviour
     private Vector3 randomPosition()
     {
         return center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2), UnityEngine.Random.Range(-size.y / 2, size.y / 2), -1f);
+    }
+
+    public bool insideBounds(Vector2 pos)
+    {
+        if (bounds.Contains(pos)){
+            return true;
+        }
+        return false;
     }
 }
