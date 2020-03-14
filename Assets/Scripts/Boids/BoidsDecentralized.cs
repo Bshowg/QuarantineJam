@@ -28,7 +28,7 @@ public class BoidsDecentralized : MonoBehaviour{
         Debug.Log(velocity); 
     }
     private void LateUpdate(){
-        transform.Translate((velocity * Time.deltaTime) * 0.00001f);
+        transform.Translate((velocity * Time.deltaTime));
     }
 
 
@@ -58,7 +58,6 @@ public class BoidsDecentralized : MonoBehaviour{
             }
         }
 
-        Debug.Log(name + "  " +);
         if (numboids > 0) percievedCenter /= numboids;
         return percievedCenter;
     }
