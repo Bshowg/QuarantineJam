@@ -18,6 +18,10 @@ public class BoidsDecentralized : MonoBehaviour{
     private bool continueCalcBoids = true;
     private float timeBetweenCalcs = .1f;
 
+
+    private bool phase = true;
+
+
     IEnumerator boidsCoroutine() {
         while (continueCalcBoids) {
             boidRule();
@@ -38,6 +42,15 @@ public class BoidsDecentralized : MonoBehaviour{
     }
 
     void Update(){
+        //update weigths:
+        if (phase) {
+            pcWeight += .001f;
+        }
+        else {
+            pcWeight -= .001f;
+        }
+        if (pcWeight > .3f || pcWeight < -0.1f) { phase = !phase; }
+
     }
     private void LateUpdate(){
         transform.Translate((velocity * Time.deltaTime));
