@@ -31,15 +31,18 @@ public class BoidsDecentralized : MonoBehaviour{
         transform.Translate((velocity * Time.deltaTime) * 0.00001f);
     }
 
+
+
+
     private void boidRule() {
         Vector2 v1 = rule1();
-        v1 = ((Vector2)transform.position - v1) / pcWeight;
+        v1 = ((Vector2)transform.position - v1) * pcWeight;
 
         Debug.Log("V1: " + v1);
         Vector2 v2 = rule2();
         Debug.Log("V2: " + v2);
         Vector2 v3 = rule3();
-        v3 = (velocity - v3) / pvWeight;
+        v3 = (velocity - v3) * pvWeight;
         Debug.Log("V3: " + v3);
         velocity += (v1 + v2 + v3);
    
@@ -54,6 +57,8 @@ public class BoidsDecentralized : MonoBehaviour{
                 numboids++;
             }
         }
+
+        Debug.Log(name + "  " +);
         if (numboids > 0) percievedCenter /= numboids;
         return percievedCenter;
     }
