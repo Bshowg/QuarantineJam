@@ -105,7 +105,8 @@ public class SpawnCrowd : MonoBehaviour
 
     public bool insideBounds(Vector2 pos)
     {
-        if (bounds.Contains(pos)){
+        if (bounds.Contains(pos) && Physics2D.OverlapCircle(pos, radius))
+        {
             return true;
         }
         return false;
