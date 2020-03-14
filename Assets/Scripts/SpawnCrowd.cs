@@ -12,15 +12,18 @@ public class SpawnCrowd : MonoBehaviour
     public int initSpawn=100;
     public int maxSpawn = 300;
     public float timestepBase = 3f;
-    public float timestep = 0f;
+    private float timestep = 0f;
 
 
     public GameObject personPrefab;
 
-    private List<Transform> crowd = new List<Transform>();
+    private static List<Transform> crowd = new List<Transform>();
+    private float radius;
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(0, 8, true);
+        radius = personPrefab.GetComponent<BoxCollider2D>().bounds.size.x;
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         for (int i = 0; i < initSpawn; i++)
         {
@@ -43,10 +46,17 @@ public class SpawnCrowd : MonoBehaviour
 
     void SpawnPerson()
     {
-        Vector3 pos = randomPosition();
-        //Vector3 pos = center + new Vector3(NextGaussianDouble(), NextGaussianDouble(), -1f);
+        Vector3 pos;
+
+        do
+        {
+            pos = randomPosition();
+        }
+        while (Physics2D.OverlapCircle(pos, radius));
+        //Vector3 pos = center + new Vector3(NextGaussian(), NextGaussian(), -1f);
         if (checkNotVisible(pos))
         {
+            
             var p = Instantiate(personPrefab);
             p.transform.position = pos;
             crowd.Add(p.transform);
@@ -76,8 +86,8 @@ public class SpawnCrowd : MonoBehaviour
 
         do
         {
-            u = 2.0f * UnityEngine.Random.Range(-size.x/2,size.x/2) - 1.0f;
-            v = 2.0f * UnityEngine.Random.Range(-size.y/2,size.y/2) - 1.0f;
+            u = 2.0f * UnityEngine.Random.Range(0f,1f) - 1.0f;
+            v = 2.0f * UnityEngine.Random.Range(0f,1f) - 1.0f;
             S = u * u + v * v;
         }
         while (S >= 1.0f);
