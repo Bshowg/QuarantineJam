@@ -66,9 +66,9 @@ public class SpawnCrowd : MonoBehaviour
             v = 2.0f * UnityEngine.Random.Range(-size.y/2,size.y/2) - 1.0f;
             S = u * u + v * v;
         }
-        while (S >= 1.0);
+        while (S >= 1.0f);
         Debug.Log(S);
-        float fac =(float) Math.Sqrt(-2.0 * Math.Log(S) / S);
+        float fac =(float) Math.Sqrt(-2.0f * Math.Log(S) / S);
         return u * fac;
     }
 }
