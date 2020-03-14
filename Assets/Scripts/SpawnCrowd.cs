@@ -9,6 +9,8 @@ public class SpawnCrowd : MonoBehaviour
     public Vector3 size;
     Camera camera;
 
+    public float timestep = 3f;
+
     public GameObject personPrefab;
     // Start is called before the first frame update
     void Start()
