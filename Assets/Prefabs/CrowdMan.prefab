@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5a821b6a99d494dbfe1e4b7be12438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRadius: 10
-  minimumAllowedDistance: 1.5
+  sightRadius: 12
+  minimumAllowedDistance: 2
   pcWeight: 0.02
-  pvWeight: 0.1
+  pvWeight: 0.2
   speed: 2

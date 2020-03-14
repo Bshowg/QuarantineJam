@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be64481a0914dfb499cba39b8995f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1
+  baseSpeed: 3
   currentSpeed: 1
   peopleAround: 0
   reduceBy: 0.1
@@ -212,7 +212,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &293513717
 SpriteRenderer:
   m_ObjectHideFlags: 0

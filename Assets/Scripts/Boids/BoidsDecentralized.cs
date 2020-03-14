@@ -15,20 +15,29 @@ public class BoidsDecentralized : MonoBehaviour{
 
     public Vector2 velocity { get; private set; }
 
+    private bool continueCalcBoids = true;
+    private float timeBetweenCalcs = .1f;
+
+    IEnumerator boidsCoroutine() {
+        while (continueCalcBoids) {
+            boidRule();
+            yield return new WaitForSeconds(timeBetweenCalcs);
+        }
+    }
+
+
     private void Awake(){
         if (boidz == null) boidz = new List<BoidsDecentralized>();
         boidz.Add(this);
     }
 
     void Start(){
-        //velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
-        velocity = new Vector2(0,0);
+        velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
         Debug.Log("Boidz: " + boidz.Count);
+        StartCoroutine(boidsCoroutine());
     }
 
     void Update(){
-        boidRule();
-        Debug.Log(velocity); 
     }
     private void LateUpdate(){
         transform.Translate((velocity * Time.deltaTime));
