@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 4aa24aa250ea0874f8a3438814e5991d
+  - enabled: 1
+    path: Assets/TestWithObstacles.unity
+    guid: 182010b1495e9b443832ac202a5b2311
   m_configObjects: {}
