@@ -10,7 +10,8 @@ public class SpawnCrowd : MonoBehaviour
     Camera camera;
 
     public int initSpawn=100;
-    public int maxSpawn = 300;
+    [SerializeField]
+    public static int maxSpawn = 150;
     public float timestepBase = 3f;
     public float timestep = 0f;
 
@@ -21,11 +22,14 @@ public class SpawnCrowd : MonoBehaviour
     private float radius;
     private Bounds bounds;
     private GameObject player;
+    private GameManager GM;
+    private int currentObjective=0;
     // Start is called before the first frame update
     void Start()
     {
         Physics2D.IgnoreLayerCollision(0, 8, true);
         player = GameObject.FindGameObjectWithTag("Player");
+        GM = FindObjectOfType<GameManager>();
         bounds = new Bounds(center, size);
         radius = personPrefab.GetComponent<BoxCollider2D>().bounds.size.x;
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -49,6 +53,11 @@ public class SpawnCrowd : MonoBehaviour
                 SpawnPerson();
 
             }
+        }
+        if (currentObjective != GM.GetCompletedObjectives())
+        {
+            currentObjective = GM.GetCompletedObjectives();
+            maxSpawn += 50;
         }
     }
 
