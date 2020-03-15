@@ -141,8 +141,8 @@ public class SpawnCrowd : MonoBehaviour
 
     public void boidKilled(GameObject b)
     {
-
-        MovePerson(b);
+        crowd.Remove(b.transform);
+        Destroy(b);
          
     }
 
