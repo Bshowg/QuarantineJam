@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class GoalInterfaceManager : MonoBehaviour{
@@ -21,17 +22,19 @@ public class GoalInterfaceManager : MonoBehaviour{
             newgoal.transform.SetParent(transform);
             newgoal.transform.position = startingpos;
 
-            newgoal.GetComponentInChildren<Text>().text = names[i];
+            newgoal.GetComponentInChildren<TextMeshProUGUI>().text = names[i];
+
             
+
             goals.Add(newgoal);
             startingpos.y -= 40;
         }
-
-        
     }
 
 
     public void updateObjectives(int i) {
         goals[i].GetComponent<Toggle>().isOn = true;
+        goals[i].GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+
     }
 }
