@@ -12,7 +12,7 @@ public class SpawnCrowd : MonoBehaviour
     public int initSpawn=100;
     public int maxSpawn = 300;
     public float timestepBase = 3f;
-    private float timestep = 0f;
+    public float timestep = 0f;
 
 
     public GameObject personPrefab;
@@ -39,14 +39,16 @@ public class SpawnCrowd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timestep += Time.deltaTime;
-        if (bounds.Contains(player.transform.position)){ 
-        if (timestep >= timestepBase && crowd.Count<maxSpawn)
-        {
-            timestep = 0;
-            SpawnPerson();
+        
+        if (bounds.Contains(player.transform.position)){
+            timestep += Time.deltaTime;
+            Debug.Log(crowd.Count);
+            if (timestep >= timestepBase && crowd.Count<maxSpawn)
+            {
+                timestep = 0;
+                SpawnPerson();
 
-        }
+            }
         }
     }
 
@@ -58,7 +60,7 @@ public class SpawnCrowd : MonoBehaviour
         {
             pos = randomPosition();
         }
-        while (Physics2D.OverlapCircle(pos, radius) && !checkNotVisible(pos));
+        while (Physics2D.OverlapCircle(pos, radius) && checkNotVisible(pos));
         //Vector3 pos = center + new Vector3(NextGaussian(), NextGaussian(), -1f);
         //if (checkNotVisible(pos))
         //{
