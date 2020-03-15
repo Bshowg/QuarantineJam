@@ -50,6 +50,7 @@ public class BoidsDecentralized : MonoBehaviour{
         velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
         Debug.Log("Boidz: " + boidz.Count);
         StartCoroutine(boidsCoroutine());
+        StartCoroutine(checkBoidToDie());
 
         minimumAllowedDistance += Random.Range(0, minimumAllowedDistance * .5f);
         sightRadius = sightRadius * Random.Range(.7f, 1.5f);
