@@ -12,7 +12,7 @@ public class SpawnCrowd : MonoBehaviour
     public int initSpawn=100;
     [SerializeField]
     public static int maxSpawn = 150;
-    public float timestepBase = 3f;
+    public static float timestepBase = 0.1f;
     public float timestep = 0f; ///DEBUG
     public int  currentlySpawned=0;///DEBUG
     public Color color;
@@ -149,5 +149,6 @@ public class SpawnCrowd : MonoBehaviour
     public void UpdateMax(int amount)
     {
         maxSpawn += amount;
+        timestepBase = 0.05f;
     }
 }

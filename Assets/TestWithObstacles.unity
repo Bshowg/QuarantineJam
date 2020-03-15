@@ -723,6 +723,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1006245125}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &222430161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222430163}
+  - component: {fileID: 222430162}
+  m_Layer: 0
+  m_Name: Spawner Left Bottom
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222430162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222430161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4b4a5a93c9b054183e9aca81586a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: -24.7, y: -17.3, z: 0}
+  size: {x: 67, y: 14.9, z: 0}
+  initSpawn: 0
+  timestepBase: 0.1
+  timestep: 0
+  currentlySpawned: 0
+  color: {r: 0.8156863, g: 0, b: 0.7755922, a: 0.49803922}
+  personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
+    type: 3}
+--- !u!4 &222430163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222430161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.1, y: -18.8, z: -19.07487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &228045224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1263,8 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4b4a5a93c9b054183e9aca81586a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: -45, y: 4.6, z: 0}
-  size: {x: 28.36, y: 40.7, z: 0}
+  center: {x: -44.3, y: 8.4, z: 0}
+  size: {x: 28.36, y: 34.81, z: 0}
   initSpawn: 50
   timestepBase: 0.1
   timestep: 0
@@ -4700,7 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4b4a5a93c9b054183e9aca81586a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: -7.09, y: 8.7, z: 0}
+  center: {x: -6.7, y: 12.37, z: 0}
   size: {x: 31.48, y: 41.7, z: 0}
   initSpawn: 50
   timestepBase: 0.1
