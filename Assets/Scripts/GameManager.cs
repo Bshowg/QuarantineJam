@@ -6,9 +6,12 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private bool[] objectives;
     private bool ending;
+    [SerializeField]
+    private SceneChanger sc;
 
     void Awake()
     {
+        sc.gameObject.SetActive(false);
         SetUpSingleton();
         for (int i = 0; i < objectives.Length; i++)
         {
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
             if (AllCompleted())
             {
                 ending = true;
+                sc.gameObject.SetActive(true);
             }
             FindObjectOfType<SpawnCrowd>().UpdateMax(50);
         }
