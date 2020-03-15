@@ -56,9 +56,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, movement, interactionDistance);
-            if (hit[1].collider.GetComponent<Objective>() != null)
+            for (int i = 0; i < hit.Length; i++)
             {
-                hit[1].collider.GetComponent<Objective>().Interaction();
+                if (hit[i].collider.GetComponent<Objective>() != null)
+                {
+                    hit[i].collider.GetComponent<Objective>().Interaction();
+                }
             }
         }
     }
