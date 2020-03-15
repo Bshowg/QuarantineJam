@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] Animator anim;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("CHANGE SCENE");
+            FadeInOut fader = FindObjectOfType<FadeInOut>();
+            fader.FadeOut();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
