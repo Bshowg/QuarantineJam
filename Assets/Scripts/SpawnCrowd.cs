@@ -13,7 +13,8 @@ public class SpawnCrowd : MonoBehaviour
     [SerializeField]
     public static int maxSpawn = 150;
     public float timestepBase = 3f;
-    public float timestep = 0f;
+    public float timestep = 0f; ///DEBUG
+    public int  currentlySpawned=0;///DEBUG
 
 
     public GameObject personPrefab;
@@ -59,24 +60,25 @@ public class SpawnCrowd : MonoBehaviour
             currentObjective = GM.GetCompletedObjectives();
             maxSpawn += 50;
         }
+        currentlySpawned = crowd.Count; ///DEBUG
     }
 
     void SpawnPerson()
     {
-        Vector3 pos;
+        Vector3 pos=randomPosition();
 
-        do
+        
+        while (Physics2D.OverlapCircle(pos, radius) || !checkNotVisible(pos))
         {
             pos = randomPosition();
         }
-        while (Physics2D.OverlapCircle(pos, radius) && checkNotVisible(pos));
         //Vector3 pos = center + new Vector3(NextGaussian(), NextGaussian(), -1f);
         //if (checkNotVisible(pos))
         //{
             
-            var p = Instantiate(personPrefab);
-            p.transform.position = pos;
-            crowd.Add(p.transform);
+        var p = Instantiate(personPrefab);
+        p.transform.position = pos;
+        crowd.Add(p.transform);
         //}
         
         
@@ -85,6 +87,7 @@ public class SpawnCrowd : MonoBehaviour
     bool checkNotVisible(Vector3 pos)
     {
         var viewportPosition = camera.WorldToViewportPoint(pos);
+        Debug.Log(viewportPosition);
         if ((viewportPosition.x > -0.1 && viewportPosition.x < 1.1) && (viewportPosition.y > -0.1 && viewportPosition.y < 1.1))
         {
             return false;
