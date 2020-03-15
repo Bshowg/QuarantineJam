@@ -1349,6 +1349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
+      propertyPath: objectives.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
+        type: 3}
       propertyPath: numberOfObjectives
       value: 3
       objectReference: {fileID: 0}
@@ -2875,6 +2880,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402084083}
     m_Modifications:
+    - target: {fileID: -4638586653524575818, guid: 7cb8aa327e87d204f820bc46398bd1b5,
+        type: 3}
+      propertyPath: objectiveNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8335675210947956625, guid: 7cb8aa327e87d204f820bc46398bd1b5,
         type: 3}
       propertyPath: m_Name
@@ -3058,6 +3068,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402084083}
     m_Modifications:
+    - target: {fileID: -4638586653524575818, guid: 7cb8aa327e87d204f820bc46398bd1b5,
+        type: 3}
+      propertyPath: objectiveNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8335675210947956625, guid: 7cb8aa327e87d204f820bc46398bd1b5,
         type: 3}
       propertyPath: m_Name
@@ -3311,6 +3326,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402084083}
     m_Modifications:
+    - target: {fileID: -4638586653524575818, guid: 7cb8aa327e87d204f820bc46398bd1b5,
+        type: 3}
+      propertyPath: objectiveNumber
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8335675210947956625, guid: 7cb8aa327e87d204f820bc46398bd1b5,
         type: 3}
       propertyPath: m_Name

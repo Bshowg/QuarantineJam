@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Objective : MonoBehaviour
 {
+    [SerializeField] private int objectiveNumber = -1;
     private bool done = false;
 
     public void Interaction()
     {
         if (!done)
         {
-            print("Interact");
             GameManager gm = FindObjectOfType<GameManager>();
-            gm.CompleteObjective();
+            gm.CompleteObjective(objectiveNumber);
             if (gm.IsEnding())
             {
                 //TODO

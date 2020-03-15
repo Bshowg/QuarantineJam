@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int completedObjectives;
-    [SerializeField] private int numberOfObjectives;
+    [SerializeField] private bool[] objectives;
     private bool ending;
 
     void Awake()
     {
         SetUpSingleton();
-        completedObjectives = 0;
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            objectives[i] = false;
+        }
         ending = false;
     }
 
@@ -21,22 +23,26 @@ public class GameManager : MonoBehaviour
         else DontDestroyOnLoad(gameObject);
     }
 
-    public void CompleteObjective()
+    public void CompleteObjective(int objectiveNumber)
     {
-        if (completedObjectives < numberOfObjectives)
+        if (!objectives[objectiveNumber])
         {
-            completedObjectives++;
-            if (completedObjectives == numberOfObjectives)
+            objectives[objectiveNumber] = true;
+            if (AllCompleted())
             {
                 ending = true;
             }
+            FindObjectOfType<SpawnCrowd>().UpdateMax(50);
         }
-        FindObjectOfType<SpawnCrowd>().UpdateMax(50);
     }
 
-    public int GetCompletedObjectives()
+    private bool AllCompleted()
     {
-        return completedObjectives;
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            if (!objectives[i]) return false;
+        }
+        return true;
     }
 
     public bool IsEnding()
