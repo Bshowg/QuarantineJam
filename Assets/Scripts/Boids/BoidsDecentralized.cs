@@ -39,7 +39,7 @@ public class BoidsDecentralized : MonoBehaviour{
 
     private void Awake(){
         if (minRadiusAroundPlayer < 0) minRadiusAroundPlayer = Camera.main.orthographicSize * 2.5f;
-        if (maxRadiusAroundPlayer < 0) maxRadiusAroundPlayer = minRadiusAroundPlayer * 2.5f;
+        if (maxRadiusAroundPlayer < 0) maxRadiusAroundPlayer = minRadiusAroundPlayer * 1.5f;
         if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         if (boidz == null) boidz = new List<BoidsDecentralized>();
         if (spawner == null) spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnCrowd>();
@@ -66,7 +66,7 @@ public class BoidsDecentralized : MonoBehaviour{
 
     private void tooFar(){
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance > 3 * minRadiusAroundPlayer){
+        if (distance > 2 * minRadiusAroundPlayer){
             boidz.Remove(this);
             spawner.boidKilled(gameObject);
         }
@@ -151,7 +151,7 @@ public class BoidsDecentralized : MonoBehaviour{
 
         for (int angle = 0; angle< 360; angle += 10) {
             float a = angle * Mathf.Deg2Rad;
-            Vector3 newv = player.transform.position + (Vector3)(new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * (3 * minRadiusAroundPlayer));
+            Vector3 newv = player.transform.position + (Vector3)(new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * (2 * minRadiusAroundPlayer));
 
             Debug.DrawLine(player.transform.position, newv, Color.green);
             if (old != Vector3.zero) {
