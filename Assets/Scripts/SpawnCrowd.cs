@@ -20,10 +20,12 @@ public class SpawnCrowd : MonoBehaviour
     private static List<Transform> crowd = new List<Transform>();
     private float radius;
     private Bounds bounds;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         Physics2D.IgnoreLayerCollision(0, 8, true);
+        player = GameObject.FindGameObjectWithTag("Player");
         bounds = new Bounds(center, size);
         radius = personPrefab.GetComponent<BoxCollider2D>().bounds.size.x;
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -38,11 +40,13 @@ public class SpawnCrowd : MonoBehaviour
     void Update()
     {
         timestep += Time.deltaTime;
+        if (bounds.Contains(player.transform.position)){ 
         if (timestep >= timestepBase && crowd.Count<maxSpawn)
         {
             timestep = 0;
             SpawnPerson();
 
+        }
         }
     }
 
@@ -110,5 +114,12 @@ public class SpawnCrowd : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void boidKilled(GameObject b)
+    {
+        crowd.Remove(b.transform);
+        Destroy(b);
+         
     }
 }
