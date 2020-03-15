@@ -147,13 +147,17 @@ public class BoidsDecentralized : MonoBehaviour{
     }
 
     private void debug_drawRadius(){
-        
-
+        Vector3 old = Vector3.zero;
 
         for (int angle = 0; angle< 360; angle += 10) {
             float a = angle * Mathf.Deg2Rad;
-            Debug.DrawLine(player.transform.position, player.transform.position + (Vector3)(new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * (3 * minRadiusAroundPlayer)), Color.green);
+            Vector3 newv = player.transform.position + (Vector3)(new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * (3 * minRadiusAroundPlayer));
 
+            Debug.DrawLine(player.transform.position, newv, Color.green);
+            if (old != Vector3.zero) {
+                Debug.DrawLine(old, newv, Color.blue);
+            }
+            old = newv;
         }
     }
 
