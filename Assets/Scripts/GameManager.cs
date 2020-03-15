@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private string[] names;
     [SerializeField] private bool[] objectives;
     private bool ending;
     [SerializeField]
@@ -38,6 +39,16 @@ public class GameManager : MonoBehaviour
             }
             FindObjectOfType<SpawnCrowd>().UpdateMax(50);
         }
+    }
+
+    public string[] GetNames()
+    {
+        return names;
+    }
+
+    public bool[] GetObjectives()
+    {
+        return objectives;
     }
 
     private bool AllCompleted()
