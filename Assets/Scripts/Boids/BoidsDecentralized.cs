@@ -67,6 +67,7 @@ public class BoidsDecentralized : MonoBehaviour{
     private void tooFar(){
         float distance = Vector2.Distance(transform.position, player.transform.position);
         if (distance > 2 * minRadiusAroundPlayer){
+            boidz.Remove(this);
             spawner.boidKilled(gameObject);
         }
     }
