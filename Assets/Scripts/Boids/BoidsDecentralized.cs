@@ -60,7 +60,7 @@ public class BoidsDecentralized : MonoBehaviour{
     
     private void LateUpdate(){
         //rearrangeAroundPlayer();
-
+        debug_drawRadius();
         transform.Translate((velocity * Time.deltaTime));
     }
 
@@ -144,6 +144,17 @@ public class BoidsDecentralized : MonoBehaviour{
         }
         if (numboids > 0)  percievedVelocity /= numboids;
         return percievedVelocity;
+    }
+
+    private void debug_drawRadius(){
+        
+
+
+        for (int angle = 0; angle< 360; angle += 10) {
+            float a = angle * Mathf.Deg2Rad;
+            Debug.DrawLine(player.transform.position, player.transform.position + (Vector3)(new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * (3 * minRadiusAroundPlayer)), Color.green);
+
+        }
     }
 
 }
