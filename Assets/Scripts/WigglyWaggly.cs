@@ -30,7 +30,7 @@ public class WigglyWaggly : MonoBehaviour{
         if (subject != null) {
             Debug.Log(subject.name + Camera.main.WorldToScreenPoint(subject.transform.position));
             Vector2 pos = Camera.main.WorldToScreenPoint(subject.transform.position);
-            rt.localPosition = pos;
+            transform.position = new Vector2((Random.Range(-50f, 50f) * wiggleSpeed * Time.deltaTime) + pos.x, (Random.Range(-50f, 50f) * wiggleSpeed * Time.deltaTime) + pos.y);
         }
 
         //rt.localPosition = new Vector2(rt.localPosition.x + (Random.Range(-5f, 5f) * wiggleSpeed * Time.deltaTime), rt.localPosition.y + (Random.Range(-5f, 5f) * wiggleSpeed * Time.deltaTime));
