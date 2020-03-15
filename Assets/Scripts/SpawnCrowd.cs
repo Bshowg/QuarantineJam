@@ -58,15 +58,15 @@ public class SpawnCrowd : MonoBehaviour
         {
             pos = randomPosition();
         }
-        while (Physics2D.OverlapCircle(pos, radius));
+        while (Physics2D.OverlapCircle(pos, radius) && !checkNotVisible(pos));
         //Vector3 pos = center + new Vector3(NextGaussian(), NextGaussian(), -1f);
-        if (checkNotVisible(pos))
-        {
+        //if (checkNotVisible(pos))
+        //{
             
             var p = Instantiate(personPrefab);
             p.transform.position = pos;
             crowd.Add(p.transform);
-        }
+        //}
         
         
     }
