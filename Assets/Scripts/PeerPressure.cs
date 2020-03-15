@@ -14,7 +14,13 @@ public class PeerPressure : MonoBehaviour{
     private IEnumerator checkForPeopleAround() {
         while (continueChecking) {
             Collider2D[] cs = Physics2D.OverlapCircleAll(transform.position, radius, crowdLayer);
-            requireTexts(cs.Length);
+            //requireTexts(cs.Length);
+            List<GameObject> gs = new List<GameObject>();
+            foreach(Collider2D c in cs) { 
+                gs.Add(c.gameObject); 
+            }
+            textmanager.requireTexts(gs);
+
             
 
             yield return new WaitForSeconds(.5f);

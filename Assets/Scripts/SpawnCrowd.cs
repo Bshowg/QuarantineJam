@@ -96,7 +96,6 @@ public class SpawnCrowd : MonoBehaviour
     bool checkNotVisible(Vector3 pos)
     {
         var viewportPosition = camera.WorldToViewportPoint(pos);
-        Debug.Log(viewportPosition);
         if ((viewportPosition.x > -0.1 && viewportPosition.x < 1.1) && (viewportPosition.y > -0.1 && viewportPosition.y < 1.1))
         {
             return false;

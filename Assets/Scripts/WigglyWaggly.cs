@@ -19,7 +19,6 @@ public class WigglyWaggly : MonoBehaviour{
     private void Start(){
         rt = gameObject.GetComponent<RectTransform>();
         StartCoroutine(countdown());
-        
     }
 
     
@@ -27,7 +26,9 @@ public class WigglyWaggly : MonoBehaviour{
 
     // Update is called once per frame
     void Update() {
+        Debug.Log("Ciao: " + subject);
         if (subject != null) {
+            Debug.Log(subject.name + Camera.main.WorldToScreenPoint(subject.transform.position));
             Vector2 pos = Camera.main.WorldToScreenPoint(subject.transform.position);
             rt.localPosition = pos;
         }
