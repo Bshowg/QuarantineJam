@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Objective : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    private bool done = false;
 
     public void Interaction()
     {
-        GameManager gm = FindObjectOfType<GameManager>();
-        gm.CompleteObjective();
-        if (gm.isEnding())
+        if (!done)
         {
-            //TODO
+            GameManager gm = FindObjectOfType<GameManager>();
+            gm.CompleteObjective();
+            if (gm.IsEnding())
+            {
+                //TODO
+            }
+            done = true;
         }
+
     }
 }

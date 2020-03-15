@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         return completedObjectives;
     }
 
-    public bool isEnding()
+    public bool IsEnding()
     {
         return ending;
     }
