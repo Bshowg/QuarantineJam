@@ -5434,7 +5434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e35162acecda98498bbcca93dc1f0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalbutton: {fileID: 4953914242532767722, guid: 530c0ae9039dd2b4293c5089b47b6f76,
+  goalbutton: {fileID: 2142337044286662803, guid: 3eff9eacacde4a44c84b411056ac7270,
     type: 3}
   goals: []
 --- !u!1001 &2129951821
