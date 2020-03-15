@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour{
+    [SerializeField] private string[] names;
     [SerializeField] private bool[] objectives;
     private bool ending;
     [SerializeField]
     private SceneChanger sc;
 
-    void Awake()
-    {
+    void Awake(){
         sc.gameObject.SetActive(false);
         SetUpSingleton();
         for (int i = 0; i < objectives.Length; i++)
@@ -20,16 +19,13 @@ public class GameManager : MonoBehaviour
         ending = false;
     }
 
-    private void SetUpSingleton()
-    {
+    private void SetUpSingleton(){
         if (FindObjectsOfType(GetType()).Length > 1) Destroy(gameObject);
         else DontDestroyOnLoad(gameObject);
     }
 
-    public void CompleteObjective(int objectiveNumber)
-    {
-        if (!objectives[objectiveNumber])
-        {
+    public void CompleteObjective(int objectiveNumber){
+        if (!objectives[objectiveNumber]){
             objectives[objectiveNumber] = true;
             if (AllCompleted())
             {
@@ -37,11 +33,19 @@ public class GameManager : MonoBehaviour
                 sc.gameObject.SetActive(true);
             }
             FindObjectOfType<SpawnCrowd>().UpdateMax(50);
+            FindObjectOfType<GoalInterfaceManager>().updateObjectives(objectiveNumber);
         }
     }
 
-    private bool AllCompleted()
-    {
+    public string[] GetNames(){
+        return names;
+    }
+
+    public bool[] GetObjectives(){
+        return objectives;
+    }
+
+    private bool AllCompleted(){
         for (int i = 0; i < objectives.Length; i++)
         {
             if (!objectives[i]) return false;
