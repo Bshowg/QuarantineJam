@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PeerPressure : MonoBehaviour{
     public float radius;
-    
-    
-    
-    private int crowdLayer = 1 << LayerMask.NameToLayer("Crowd");
+
+
+
+    private int crowdLayer = 0;
 
     private bool continueChecking = true;
 
     private IEnumerator checkForPeopleAround() {
         while (continueChecking) {
             Collider2D[] cs = Physics2D.OverlapCircleAll(transform.position, radius, crowdLayer);
+            requireTexts(cs.Length);
             yield return new WaitForSeconds(.5f);
         }
     }
@@ -24,6 +25,7 @@ public class PeerPressure : MonoBehaviour{
     }
 
     void Start(){
+        crowdLayer = 1 << LayerMask.NameToLayer("Crowd");
         StartCoroutine(checkForPeopleAround());
     }
 
