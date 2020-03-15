@@ -60,7 +60,7 @@ public class BoidsDecentralized : MonoBehaviour{
     
     private void LateUpdate(){
         //rearrangeAroundPlayer();
-        debug_drawRadius();
+        //debug_drawRadius();
         transform.Translate((velocity * Time.deltaTime));
     }
 
