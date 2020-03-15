@@ -10,6 +10,7 @@ public class Objective : MonoBehaviour
     {
         if (!done)
         {
+            print("Interact");
             GameManager gm = FindObjectOfType<GameManager>();
             gm.CompleteObjective();
             if (gm.IsEnding())
@@ -17,6 +18,7 @@ public class Objective : MonoBehaviour
                 //TODO
             }
             done = true;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         }
 
     }
