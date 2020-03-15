@@ -29,6 +29,12 @@ public class BoidsDecentralized : MonoBehaviour{
             yield return new WaitForSeconds(timeBetweenCalcs);
         }
     }
+    IEnumerator checkBoidToDie() {
+        while (continueCalcBoids) {
+            tooFar();
+            yield return new WaitForSeconds(1);
+        }
+    }
 
 
     private void Awake(){
@@ -52,11 +58,19 @@ public class BoidsDecentralized : MonoBehaviour{
 
     
     private void LateUpdate(){
-        rearrangeAroundPlayer();
+        //rearrangeAroundPlayer();
 
         transform.Translate((velocity * Time.deltaTime));
     }
 
+    private void tooFar(){
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        if (distance > 3 * minRadiusAroundPlayer){
+            boidz.Remove(this);
+            //spawner.boidKilled(this);
+            Destroy(this);
+        }
+    }
 
     private void rearrangeAroundPlayer() {
         float distance = Vector2.Distance(transform.position, player.transform.position);
