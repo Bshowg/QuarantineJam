@@ -80,6 +80,19 @@ public class SpawnCrowd : MonoBehaviour
         
     }
 
+    void MovePerson(GameObject boid)
+    {
+        Vector3 pos = randomPosition();
+
+
+        while (Physics2D.OverlapCircle(pos, radius) || !checkNotVisible(pos))
+        {
+            pos = randomPosition();
+        }
+
+        boid.transform.position = pos;
+    }
+
     bool checkNotVisible(Vector3 pos)
     {
         var viewportPosition = camera.WorldToViewportPoint(pos);
@@ -128,8 +141,8 @@ public class SpawnCrowd : MonoBehaviour
 
     public void boidKilled(GameObject b)
     {
-        crowd.Remove(b.transform);
-        Destroy(b);
+
+        MovePerson(b);
          
     }
 
