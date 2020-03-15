@@ -15,7 +15,7 @@ public class SpawnCrowd : MonoBehaviour
     public float timestepBase = 3f;
     public float timestep = 0f; ///DEBUG
     public int  currentlySpawned=0;///DEBUG
-
+    public Color color;
 
     public GameObject personPrefab;
 
@@ -55,11 +55,7 @@ public class SpawnCrowd : MonoBehaviour
 
             }
         }
-        if (currentObjective != GM.GetCompletedObjectives())
-        {
-            currentObjective = GM.GetCompletedObjectives();
-            maxSpawn += 50;
-        }
+        
         currentlySpawned = crowd.Count; ///DEBUG
     }
 
@@ -96,7 +92,7 @@ public class SpawnCrowd : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(1f, 1f, 1f, 0.3f);
+        Gizmos.color = color;
         Gizmos.DrawCube(center, size);
     }
 
@@ -135,5 +131,10 @@ public class SpawnCrowd : MonoBehaviour
         crowd.Remove(b.transform);
         Destroy(b);
          
+    }
+
+    public void UpdateMax(int amount)
+    {
+        maxSpawn += amount;
     }
 }

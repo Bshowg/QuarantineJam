@@ -859,8 +859,10 @@ MonoBehaviour:
   center: {x: 32.7, y: -9.9, z: 0}
   size: {x: 44.8, y: 27.21, z: 0}
   initSpawn: 50
-  timestepBase: 0.5
+  timestepBase: 0.1
   timestep: 0
+  currentlySpawned: 0
+  color: {r: 0, g: 0.972549, b: 0, a: 0.6117647}
   personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
     type: 3}
 --- !u!4 &233208970
@@ -1261,11 +1263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4b4a5a93c9b054183e9aca81586a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: -47.84, y: 9.3, z: 0}
-  size: {x: 22.7, y: 34.2, z: 0}
+  center: {x: -45, y: 4.6, z: 0}
+  size: {x: 28.36, y: 40.7, z: 0}
   initSpawn: 50
-  timestepBase: 0.5
+  timestepBase: 0.1
   timestep: 0
+  currentlySpawned: 0
+  color: {r: 0.99593765, g: 1, b: 0.15566039, a: 0.3529412}
   personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
     type: 3}
 --- !u!4 &385764683
@@ -2338,6 +2342,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1112332532}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &789278921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789278923}
+  - component: {fileID: 789278922}
+  m_Layer: 0
+  m_Name: Spawner Right Top
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &789278922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789278921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4b4a5a93c9b054183e9aca81586a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 32.7, y: 18.2, z: 0}
+  size: {x: 43.2, y: 26.1, z: 0}
+  initSpawn: 0
+  timestepBase: 0.1
+  timestep: 0
+  currentlySpawned: 0
+  color: {r: 0.8156863, g: 0, b: 0, a: 0.49803922}
+  personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
+    type: 3}
+--- !u!4 &789278923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789278921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.8, y: 16.5, z: -19.07487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &825126870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4647,8 +4703,10 @@ MonoBehaviour:
   center: {x: -7.09, y: 8.7, z: 0}
   size: {x: 31.48, y: 41.7, z: 0}
   initSpawn: 50
-  timestepBase: 0.5
+  timestepBase: 0.1
   timestep: 0
+  currentlySpawned: 0
+  color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0.3882353}
   personPrefab: {fileID: 2275452340560968433, guid: 963e9b6362105a049a8562f8858996ec,
     type: 3}
 --- !u!4 &2050614937

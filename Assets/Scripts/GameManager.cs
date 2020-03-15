@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
                 ending = true;
             }
         }
+        FindObjectOfType<SpawnCrowd>().UpdateMax(50);
     }
 
     public int GetCompletedObjectives()
