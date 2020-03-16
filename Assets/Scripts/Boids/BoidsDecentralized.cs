@@ -51,7 +51,6 @@ public class BoidsDecentralized : MonoBehaviour{
 
     void Start(){
         velocity = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
-        Debug.Log("Boidz: " + boidz.Count);
         StartCoroutine(boidsCoroutine());
         StartCoroutine(checkBoidToDie());
 
