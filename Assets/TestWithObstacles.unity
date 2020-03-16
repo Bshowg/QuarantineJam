@@ -1374,17 +1374,17 @@ PrefabInstance:
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
       propertyPath: names.Array.data[0]
-      value: banane
+      value: Oranges
       objectReference: {fileID: 0}
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
       propertyPath: names.Array.data[1]
-      value: sdgfdgf
+      value: Cabbage
       objectReference: {fileID: 0}
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
       propertyPath: names.Array.data[2]
-      value: giorgio
+      value: Socks
       objectReference: {fileID: 0}
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
@@ -4187,8 +4187,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: peopleNoise
-      value: 0.1
+      value: 0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
+      propertyPath: noiseWithoutPeople
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650333323, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d94a27ba97b505d45933ff630a3d93cd, type: 3}
     - target: {fileID: 4671563859027288651, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
       propertyPath: m_Name
