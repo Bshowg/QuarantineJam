@@ -20,7 +20,7 @@ public class FadeInOut : MonoBehaviour
         Debug.Log((SceneManager.GetActiveScene().buildIndex + 1).ToString() + " " + scene);
         if(scene == 0)
         {
-            FindObjectOfType<GameManager>().ResetObjectives;
+            FindObjectOfType<GameManager>().ResetObjectives();
         }
         SceneManager.LoadScene(scene);
     }
