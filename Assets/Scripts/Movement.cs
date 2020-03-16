@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float reduceBy = 0.1f;
     [SerializeField] private float minSpeed = 0.2f;
     [SerializeField] private float paranoiaRadius = 5f;
-    [SerializeField] private float interactionDistance = 1f;
+    [SerializeField] private float interactionDistance = 2f;
 
     private Rigidbody2D rb;
     private Animator anim;
