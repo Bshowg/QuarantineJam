@@ -124,9 +124,9 @@ MonoBehaviour:
   currentSpeed: 1
   peopleAround: 0
   reduceBy: 0.4
-  minSpeed: 0.5
+  minSpeed: 0.65
   paranoiaRadius: 3
-  interactionDistance: 1
+  interactionDistance: 2
 --- !u!95 &-5759797737364876923
 Animator:
   serializedVersion: 3
@@ -281,3 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
+  peopleNoise: 0
+  minNumberOfPeopleToHearNoise: 0
+  noiseWithoutPeople: 0
+  cameraMovementSpeed: 0
+  cameraReductionRatio: 0
+  peopleToTriggerCamera: 0
