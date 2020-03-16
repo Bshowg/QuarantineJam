@@ -8,12 +8,12 @@ public class createFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = -60; i < 60; i++)
+        for (int i = -20; i < 20; i++)
         {
-            for (int j = -30; j < 33; j++)
+            for (int j = -10; j < 11; j++)
             {
                 var t = Instantiate(tile, this.transform);
-                t.transform.position = new Vector3(i, j, -1f);
+                t.transform.position = new Vector3(i*3, j*3, -1f);
             }
         }
     }
