@@ -6075,6 +6075,8 @@ MonoBehaviour:
   goalbutton: {fileID: 2142337044286662803, guid: 3eff9eacacde4a44c84b411056ac7270,
     type: 3}
   goals: []
+  background: {fileID: 332451137608102743, guid: c85366ed2170d8e4ab970727c8a9529e,
+    type: 3}
 --- !u!1001 &2129951821
 PrefabInstance:
   m_ObjectHideFlags: 0
