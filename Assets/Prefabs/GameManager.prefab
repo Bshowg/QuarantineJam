@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f564601a9ab736845a2fcd4f31a1e851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names:
+  - Oranges
+  - Cabbage
+  - Socks
+  objectives: 000000
+  sc: {fileID: 0}
