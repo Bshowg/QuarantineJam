@@ -1187,6 +1187,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ad0e4f0880ae54ca8f57e61b45c517, type: 3}
+--- !u!1001 &3636365979112850909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.1291175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7694483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.633246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221917660539444224, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540836789765238821, guid: 065db2cc9b08cb44eaa168c58c834649,
+        type: 3}
+      propertyPath: m_Name
+      value: CrowdManLightHat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 065db2cc9b08cb44eaa168c58c834649, type: 3}
 --- !u!1001 &5258241994664742999
 PrefabInstance:
   m_ObjectHideFlags: 0

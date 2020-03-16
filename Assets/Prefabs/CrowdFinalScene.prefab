@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1509935995574215655}
   - component: {fileID: 3580818696298076687}
   m_Layer: 8
-  m_Name: CrowdManStraight
+  m_Name: CrowdFinalScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
