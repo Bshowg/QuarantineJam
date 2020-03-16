@@ -10,7 +10,7 @@ public class SpawnCrowd : MonoBehaviour
     Camera camera;
 
     public int initSpawn=100;
-    [SerializeField]
+    
     public static int maxSpawn = 150;
     public static float timestepBase = 0.15f;
     public float timestep = 0f; ///DEBUG
@@ -150,4 +150,7 @@ public class SpawnCrowd : MonoBehaviour
         maxSpawn += amount;
         timestepBase -= 0.05f;
     }
+
+    
+
 }

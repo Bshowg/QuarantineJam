@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour{
 
     private void Start()
     {
-        if (objectives.Length == 0)
-        {
-            sc.gameObject.SetActive(true);
-        }
+        
     }
     private void SetUpSingleton(){
         if (FindObjectsOfType(GetType()).Length > 1) Destroy(gameObject);
