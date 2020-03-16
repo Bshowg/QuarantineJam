@@ -7,12 +7,16 @@ public class GoalInterfaceManager : MonoBehaviour{
     public GameObject goalbutton;
 
     public List<GameObject> goals;
+
+    public GameObject background;
     
     void Start(){
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         goals = new List<GameObject>();
 
         string[] names = gm.GetNames();
+        var backgr=Instantiate(background, this.gameObject.transform);
+        backgr.transform.position = new Vector2(70,Screen.height-90);
 
         Vector2 startingpos = new Vector2(100, Screen.height-50);
 
