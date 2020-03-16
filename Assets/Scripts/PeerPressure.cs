@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PeerPressure : MonoBehaviour{
     public float radius;
-
+    public float peopleNoise;
+    public float minNumberOfPeopleToHearNoise;
+    public float noiseWithoutPeople;
 
     private TextManager textmanager = null;
     private int crowdLayer = 0;
@@ -23,10 +25,8 @@ public class PeerPressure : MonoBehaviour{
             }
             textmanager.requireTexts(gs);
 
-            float x = Mathf.Min(1f, ((float)cs.Length / 10));
-            gibberish.volume = x;
-
-            Debug.Log("gibberish " + x + " " +  cs.Length + " " + gibberish.volume);
+            float noiseintensity = ((float)(Mathf.Max(cs.Length - minNumberOfPeopleToHearNoise, 0)) * peopleNoise) + noiseWithoutPeople;
+            gibberish.volume = Mathf.Min(1f, noiseintensity); 
 
             yield return new WaitForSeconds(.5f);
         }
