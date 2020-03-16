@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PeerPressure : MonoBehaviour{
     public float radius;
+
     public float peopleNoise;
     public float minNumberOfPeopleToHearNoise;
     public float noiseWithoutPeople;
+
+    public float cameraMovementSpeed;
+    public float cameraReductionRatio;
+    public int peopleToTriggerCamera;
 
     private TextManager textmanager = null;
     private int crowdLayer = 0;
@@ -14,6 +19,11 @@ public class PeerPressure : MonoBehaviour{
     private bool continueChecking = true;
 
     private AudioSource gibberish;
+
+    private float camsize;
+    private float desiredSize;
+
+    private Camera cam;
 
     private IEnumerator checkForPeopleAround() {
         while (continueChecking) {
@@ -26,8 +36,10 @@ public class PeerPressure : MonoBehaviour{
             textmanager.requireTexts(gs);
 
             float noiseintensity = ((float)(Mathf.Max(cs.Length - minNumberOfPeopleToHearNoise, 0)) * peopleNoise) + noiseWithoutPeople;
-            gibberish.volume = Mathf.Min(1f, noiseintensity); 
+            gibberish.volume = Mathf.Min(1f, noiseintensity);
 
+            desiredSize = (cs.Length >= peopleToTriggerCamera) ? camsize * cameraReductionRatio : camsize;
+        
             yield return new WaitForSeconds(.5f);
         }
     }
@@ -41,14 +53,21 @@ public class PeerPressure : MonoBehaviour{
     void Start(){
         crowdLayer = 1 << LayerMask.NameToLayer("Crowd");
         textmanager = GameObject.FindGameObjectWithTag("TextManager").GetComponent<TextManager>();
+        cam = Camera.main;
+        camsize = cam.orthographicSize;
+        desiredSize = cam.orthographicSize;
         gibberish = gameObject.GetComponent<AudioSource>();
         gibberish.volume = 0f;
         StartCoroutine(checkForPeopleAround());
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+        if (desiredSize < cam.orthographicSize){
+            cam.orthographicSize = Mathf.Max(desiredSize, cam.orthographicSize - (cameraMovementSpeed*Time.deltaTime));
+        }
+        else if (desiredSize > cam.orthographicSize){
+            cam.orthographicSize = Mathf.Min(camsize, cam.orthographicSize + (cameraMovementSpeed * Time.deltaTime));
+        }
     }
 }
