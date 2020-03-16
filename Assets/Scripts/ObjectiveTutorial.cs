@@ -12,13 +12,26 @@ public class ObjectiveTutorial : MonoBehaviour{
 
 
     private void OnTriggerEnter2D(Collider2D collision){
-        ti_obj = GameObject.Instantiate(tutorialinfo);
-        ti_obj.transform.SetParent(canvas.transform);
-        ti_obj.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player") {
+            Debug.Log("Ciao");
+            ti_obj = GameObject.Instantiate(tutorialinfo);
+            ti_obj.transform.SetParent(canvas.transform);
+            ti_obj.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+        }
+        
+    }
+
+    private void Update(){
+        if (ti_obj != null) {
+            Vector2 c = Camera.main.WorldToScreenPoint(transform.position);
+
+            ti_obj.transform.position = new Vector2(c.x + 130, c.y + 50);
+        }        
     }
 
     private void OnTriggerExit2D(Collider2D collision){
-        if (ti_obj != null) Destroy(ti_obj); 
+        if (collision.gameObject.tag == "Player" && ti_obj != null) Destroy(ti_obj); 
         
     }
 }
