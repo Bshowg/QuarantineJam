@@ -126,7 +126,7 @@ MonoBehaviour:
   reduceBy: 0.4
   minSpeed: 0.65
   paranoiaRadius: 3
-  interactionDistance: 3
+  interactionDistance: 2
 --- !u!95 &-5759797737364876923
 Animator:
   serializedVersion: 3
