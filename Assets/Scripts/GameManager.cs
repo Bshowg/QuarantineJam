@@ -61,4 +61,12 @@ public class GameManager : MonoBehaviour{
     {
         return ending;
     }
+
+    public void ResetObjectives()
+    {
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            objectives[i] = false;
+        }
+    }
 }
