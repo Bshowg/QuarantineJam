@@ -9,8 +9,9 @@ public class SpawnCrowd : MonoBehaviour
     public Vector3 size;
     Camera camera;
 
-    public int initSpawn=100;
-    
+    public int initSpawn = 100;
+    [SerializeField]
+    bool reinitMaxSpawn = false;
     public static int maxSpawn = 150;
     public static float timestepBase = 0.15f;
     public float timestep = 0f; ///DEBUG
@@ -28,6 +29,10 @@ public class SpawnCrowd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (reinitMaxSpawn)
+        {
+            maxSpawn = 5;
+        }
         Physics2D.IgnoreLayerCollision(0, 8, true);
         player = GameObject.FindGameObjectWithTag("Player");
         GM = FindObjectOfType<GameManager>();
