@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour{
     {
         if (objectives.Length == 0)
         {
-            sc.gameObject.SetActive(true);
+            sc.gameObject.SetActive(false);
         }
     }
     private void SetUpSingleton(){
