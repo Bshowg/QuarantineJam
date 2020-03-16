@@ -13,6 +13,7 @@ public class TextManager : MonoBehaviour{
 
             GameObject newText = GameObject.Instantiate(text) as GameObject;
             newText.transform.SetParent(transform);
+            newText.transform.SetAsFirstSibling();
             newText.GetComponent<WigglyWaggly>().subject = g;
             if (possibleLines != null) {
                 if (possibleLines.Count > 0) {
