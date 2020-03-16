@@ -26,9 +26,9 @@ public class WigglyWaggly : MonoBehaviour{
 
     // Update is called once per frame
     void Update() {
-        Debug.Log("Ciao: " + subject);
+        //Debug.Log("Ciao: " + subject);
         if (subject != null) {
-            Debug.Log(subject.name + Camera.main.WorldToScreenPoint(subject.transform.position));
+            //Debug.Log(subject.name + Camera.main.WorldToScreenPoint(subject.transform.position));
             Vector2 pos = Camera.main.WorldToScreenPoint(subject.transform.position);
             transform.position = new Vector2((Random.Range(-50f, 50f) * wiggleSpeed * Time.deltaTime) + pos.x, (Random.Range(-50f, 50f) * wiggleSpeed * Time.deltaTime) + pos.y);
         }

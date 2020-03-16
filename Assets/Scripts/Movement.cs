@@ -55,12 +55,14 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, movement, interactionDistance);
+            int objectiveLayer = 1 << LayerMask.NameToLayer("Objective");
+            Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, interactionDistance, objectiveLayer);
             for (int i = 0; i < hit.Length; i++)
             {
-                if (hit[i].collider.GetComponent<Objective>() != null)
+                Debug.Log("INTERACT");
+                if (hit[i].GetComponent<Objective>() != null)
                 {
-                    hit[i].collider.GetComponent<Objective>().Interaction();
+                    hit[i].GetComponent<Objective>().Interaction();
                 }
             }
         }

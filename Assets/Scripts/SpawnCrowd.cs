@@ -52,7 +52,7 @@ public class SpawnCrowd : MonoBehaviour
         
         if (bounds.Contains(player.transform.position)){
             timestep += Time.deltaTime;
-            Debug.Log(crowd.Count);
+            //Debug.Log(crowd.Count);
             if (timestep >= timestepBase && crowd.Count<maxSpawn)
             {
                 timestep = 0;
