@@ -4742,16 +4742,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
-      propertyPath: cameraReductionRatio
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: peopleToTriggerCamera
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: breathChangeSpeed
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1650333323, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: m_audioClip
@@ -5284,7 +5280,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828820241}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4a4086f7f49dcf04a9a9c7ce7f7f30f4, type: 3}
