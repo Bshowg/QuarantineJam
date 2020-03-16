@@ -13,6 +13,8 @@ public class PeerPressure : MonoBehaviour{
     public float cameraReductionRatio;
     public int peopleToTriggerCamera;
 
+    public float breathChangeSpeed;
+
     private TextManager textmanager = null;
     private int crowdLayer = 0;
 
@@ -25,6 +27,10 @@ public class PeerPressure : MonoBehaviour{
 
     private Camera cam;
 
+    private AudioSource breath;
+    private float desiredAudioIntensity;
+    
+    
     private IEnumerator checkForPeopleAround() {
         while (continueChecking) {
             Collider2D[] cs = Physics2D.OverlapCircleAll(transform.position, radius, crowdLayer);
@@ -46,8 +52,6 @@ public class PeerPressure : MonoBehaviour{
 
     private void requireTexts(int howMany) {
         Debug.Log("Required " + howMany + " texts");
-
-
     }
 
     void Start(){
@@ -63,11 +67,23 @@ public class PeerPressure : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if (desiredSize < cam.orthographicSize){
-            cam.orthographicSize = Mathf.Max(desiredSize, cam.orthographicSize - (cameraMovementSpeed*Time.deltaTime));
+        if (desiredSize < cam.orthographicSize)
+        {
+            cam.orthographicSize = Mathf.Max(desiredSize, cam.orthographicSize - (cameraMovementSpeed * Time.deltaTime));
         }
-        else if (desiredSize > cam.orthographicSize){
+        else if (desiredSize > cam.orthographicSize)
+        {
             cam.orthographicSize = Mathf.Min(camsize, cam.orthographicSize + (cameraMovementSpeed * Time.deltaTime));
+        }
+        return;
+
+        if (desiredAudioIntensity < breath.volume)
+        {
+            breath.volume = Mathf.Max(1, breath.volume - (breathChangeSpeed * Time.deltaTime));
+        }
+        else if (desiredAudioIntensity > breath.volume)
+        {
+            breath.volume = Mathf.Min(1, breath.volume + (breathChangeSpeed * Time.deltaTime));
         }
     }
 }
