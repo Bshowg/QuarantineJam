@@ -357,6 +357,26 @@ PrefabInstance:
       propertyPath: reinitMaxSpawn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1493866512180907300, guid: 52b723af0b1b7a244af7c7519ec69913,
+        type: 3}
+      propertyPath: center.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493866512180907300, guid: 52b723af0b1b7a244af7c7519ec69913,
+        type: 3}
+      propertyPath: center.y
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493866512180907300, guid: 52b723af0b1b7a244af7c7519ec69913,
+        type: 3}
+      propertyPath: size.y
+      value: 63.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493866512180907300, guid: 52b723af0b1b7a244af7c7519ec69913,
+        type: 3}
+      propertyPath: size.x
+      value: 15.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1493866512180907301, guid: 52b723af0b1b7a244af7c7519ec69913,
         type: 3}
       propertyPath: m_LocalPosition.x
