@@ -1379,7 +1379,7 @@ PrefabInstance:
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
       propertyPath: names.Array.data[1]
-      value: sigarelli
+      value: sdgfdgf
       objectReference: {fileID: 0}
     - target: {fileID: 7027417485760468871, guid: 02983c835b3d6b74d8153c6c7ddfc255,
         type: 3}
@@ -4185,6 +4185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
+      propertyPath: peopleNoise
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4671563859027288651, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
       propertyPath: m_Name
