@@ -77,6 +77,9 @@ public class PeerPressure : MonoBehaviour{
         {
             cam.orthographicSize = Mathf.Min(camsize, cam.orthographicSize + (cameraMovementSpeed * Time.deltaTime));
         }
+
+
+
         if (desiredAudioIntensity < breath.volume)
         {
             breath.volume = Mathf.Max(0, breath.volume - (breathChangeSpeed * Time.deltaTime));
