@@ -11,6 +11,8 @@ public class PeerPressure : MonoBehaviour{
 
     private bool continueChecking = true;
 
+    private AudioSource gibberish;
+
     private IEnumerator checkForPeopleAround() {
         while (continueChecking) {
             Collider2D[] cs = Physics2D.OverlapCircleAll(transform.position, radius, crowdLayer);
@@ -21,7 +23,10 @@ public class PeerPressure : MonoBehaviour{
             }
             textmanager.requireTexts(gs);
 
-            
+            float x = Mathf.Min(1f, ((float)cs.Length / 10));
+            gibberish.volume = x;
+
+            Debug.Log("gibberish " + x + " " +  cs.Length + " " + gibberish.volume);
 
             yield return new WaitForSeconds(.5f);
         }
@@ -36,6 +41,8 @@ public class PeerPressure : MonoBehaviour{
     void Start(){
         crowdLayer = 1 << LayerMask.NameToLayer("Crowd");
         textmanager = GameObject.FindGameObjectWithTag("TextManager").GetComponent<TextManager>();
+        gibberish = gameObject.GetComponent<AudioSource>();
+        gibberish.volume = 0f;
         StartCoroutine(checkForPeopleAround());
     }
 
