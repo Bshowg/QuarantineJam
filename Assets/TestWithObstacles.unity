@@ -4747,12 +4747,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: breathChangeSpeed
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 1650333323, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: d94a27ba97b505d45933ff630a3d93cd, type: 3}
     - target: {fileID: 4671563859027288651, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
       propertyPath: m_Name
@@ -4761,12 +4757,12 @@ PrefabInstance:
     - target: {fileID: 6811214313031479387, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.34
+      value: 3.81
       objectReference: {fileID: 0}
     - target: {fileID: 6811214313031479387, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.43
+      value: 30.21
       objectReference: {fileID: 0}
     - target: {fileID: 6811214313031479387, guid: e555ff252283da646a3b28e6f7af93f0,
         type: 3}
@@ -6152,16 +6148,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 4616290272352665252, guid: 32fe1a381d5d8c24cb29ea1d3c617f89, type: 3}
   possibleLines:
-  - ' kfjvgbs sonv v'
-  - bla bla bla
-  - lorem ipsum dolor sic
-  - ciao a atu fj v
-  - vffv55y gf
-  - si vince la jam
-  - crowdman
-  - ' vlnfbv b'
-  - bla bla bla 3
-  - wegtj ikiloi tygynrtfhebd
+  - Who's that guy?
+  - Hahah look at him!
+  - Aren't you ashamed of going out in that state?
+  - What's your problem? You think you're so special?
+  - The other day I did some non interesting stuff
+  - I'm frivolous and certanly boring unlike that dude
+  - Do you enjoy feeling so different and depressed?
+  - I hope you enjoy being a self-pitying bastard
+  - I'm just another face in the crowd, unlike you
+  - These thoughts will destroy you but you find them comforting
+  - What's wrong with you?
 --- !u!114 &2118362940
 MonoBehaviour:
   m_ObjectHideFlags: 0
