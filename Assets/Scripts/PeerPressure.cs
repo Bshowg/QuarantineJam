@@ -45,7 +45,8 @@ public class PeerPressure : MonoBehaviour{
             gibberish.volume = Mathf.Min(1f, noiseintensity);
 
             desiredSize = (cs.Length >= peopleToTriggerCamera) ? camsize * cameraReductionRatio : camsize;
-        
+            desiredAudioIntensity = (cs.Length >= peopleToTriggerCamera) ? 1 : 0;
+
             yield return new WaitForSeconds(.5f);
         }
     }
