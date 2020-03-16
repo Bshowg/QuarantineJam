@@ -17,7 +17,7 @@ public class SpawnCrowd : MonoBehaviour
     public int  currentlySpawned=0;///DEBUG
     public Color color;
 
-    public GameObject personPrefab;
+    public List<GameObject> personPrefab= new List<GameObject>();
 
     private static List<Transform> crowd = new List<Transform>();
     private float radius;
@@ -32,7 +32,7 @@ public class SpawnCrowd : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         GM = FindObjectOfType<GameManager>();
         bounds = new Bounds(center, size);
-        radius = personPrefab.GetComponent<BoxCollider2D>().bounds.size.x;
+        radius = personPrefab[0].GetComponent<BoxCollider2D>().bounds.size.x;
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         for (int i = 0; i < initSpawn; i++)
         {
@@ -71,8 +71,8 @@ public class SpawnCrowd : MonoBehaviour
         //Vector3 pos = center + new Vector3(NextGaussian(), NextGaussian(), -1f);
         //if (checkNotVisible(pos))
         //{
-            
-        var p = Instantiate(personPrefab);
+        var v = UnityEngine.Random.Range(0, personPrefab.Count);  
+        var p = Instantiate(personPrefab[v]);
         p.transform.position = pos;
         crowd.Add(p.transform);
         //}

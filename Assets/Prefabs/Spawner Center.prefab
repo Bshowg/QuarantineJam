@@ -49,5 +49,8 @@ MonoBehaviour:
   timestep: 0
   currentlySpawned: 0
   color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0.3882353}
-  personPrefab: {fileID: 1880680287121388625, guid: 8dfb7dc0385f9fb4b8dd2c6ebc2552bf,
-    type: 3}
+  personPrefab:
+  - {fileID: 1880680287121388625, guid: 8dfb7dc0385f9fb4b8dd2c6ebc2552bf, type: 3}
+  - {fileID: 6644908586738742373, guid: 74d0b2545cf688d4c99aa155f0fc950f, type: 3}
+  - {fileID: 6540836789765238821, guid: 065db2cc9b08cb44eaa168c58c834649, type: 3}
+  - {fileID: 3606369853662622191, guid: 4012a0b5726505946965be0e9bc5e301, type: 3}
