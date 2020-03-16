@@ -4742,16 +4742,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
-      propertyPath: cameraReductionRatio
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: peopleToTriggerCamera
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: breathChangeSpeed
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1650333323, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: m_audioClip

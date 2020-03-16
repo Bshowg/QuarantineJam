@@ -285,5 +285,6 @@ MonoBehaviour:
   minNumberOfPeopleToHearNoise: 0
   noiseWithoutPeople: 0
   cameraMovementSpeed: 0
-  cameraReductionRatio: 0
+  cameraReductionRatio: 0.7
   peopleToTriggerCamera: 0
+  breathChangeSpeed: 0
