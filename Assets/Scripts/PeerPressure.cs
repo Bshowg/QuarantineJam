@@ -78,7 +78,7 @@ public class PeerPressure : MonoBehaviour{
         }
         if (desiredAudioIntensity < breath.volume)
         {
-            breath.volume = Mathf.Max(1, breath.volume - (breathChangeSpeed * Time.deltaTime));
+            breath.volume = Mathf.Max(0, breath.volume - (breathChangeSpeed * Time.deltaTime));
         }
         else if (desiredAudioIntensity > breath.volume)
         {
