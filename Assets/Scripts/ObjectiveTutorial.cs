@@ -26,7 +26,7 @@ public class ObjectiveTutorial : MonoBehaviour{
         if (ti_obj != null) {
             Vector2 c = Camera.main.WorldToScreenPoint(transform.position);
 
-            ti_obj.transform.position = new Vector2(c.x + 130, c.y + 50);
+            ti_obj.transform.position = new Vector2(c.x + 200, c.y + 50);
         }        
     }
 
