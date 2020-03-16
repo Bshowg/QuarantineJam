@@ -60,7 +60,8 @@ public class PeerPressure : MonoBehaviour{
         cam = Camera.main;
         camsize = cam.orthographicSize;
         desiredSize = cam.orthographicSize;
-        gibberish = gameObject.GetComponent<AudioSource>();
+        gibberish = gameObject.GetComponents<AudioSource>()[0];
+        breath = gameObject.GetComponents<AudioSource>()[1];
         gibberish.volume = 0f;
         StartCoroutine(checkForPeopleAround());
     }
@@ -75,8 +76,6 @@ public class PeerPressure : MonoBehaviour{
         {
             cam.orthographicSize = Mathf.Min(camsize, cam.orthographicSize + (cameraMovementSpeed * Time.deltaTime));
         }
-        return;
-
         if (desiredAudioIntensity < breath.volume)
         {
             breath.volume = Mathf.Max(1, breath.volume - (breathChangeSpeed * Time.deltaTime));

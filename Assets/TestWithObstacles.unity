@@ -4749,6 +4749,10 @@ PrefabInstance:
       propertyPath: peopleToTriggerCamera
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1650333322, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
+      propertyPath: breathChangeSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1650333323, guid: e555ff252283da646a3b28e6f7af93f0, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -5283,7 +5287,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 04bc668a8b108844cbc562548681ad36, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4a4086f7f49dcf04a9a9c7ce7f7f30f4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
