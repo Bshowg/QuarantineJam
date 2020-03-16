@@ -120,13 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be64481a0914dfb499cba39b8995f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 4
+  baseSpeed: 4.5
   currentSpeed: 1
   peopleAround: 0
   reduceBy: 0.4
   minSpeed: 0.65
   paranoiaRadius: 3
-  interactionDistance: 2
+  interactionDistance: 3
 --- !u!95 &-5759797737364876923
 Animator:
   serializedVersion: 3
@@ -182,7 +182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 04bc668a8b108844cbc562548681ad36, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d94a27ba97b505d45933ff630a3d93cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -285,6 +285,6 @@ MonoBehaviour:
   minNumberOfPeopleToHearNoise: 0
   noiseWithoutPeople: 0
   cameraMovementSpeed: 0
-  cameraReductionRatio: 0.7
+  cameraReductionRatio: 0.75
   peopleToTriggerCamera: 0
   breathChangeSpeed: 0
